@@ -1,11 +1,6 @@
 package algorithms
 
-func QuickSort(array []int) []int {
-
-	return sortArray(array)
-}
-
-func sortArray(array []int) (sortedArray []int) {
+func QuickSort(array []int) (sortedArray []int) {
 	if len(array) <= 1 {
 		return array
 	}
@@ -27,8 +22,8 @@ func sortArray(array []int) (sortedArray []int) {
 		}
 	}
 
-	lessPivot = sortArray(lessPivot)
-	morePivot = sortArray(morePivot)
+	lessPivot = QuickSort(lessPivot)
+	morePivot = QuickSort(morePivot)
 
 	sortedArray = append(sortedArray, lessPivot...)
 	sortedArray = append(sortedArray, equalPivot...)
